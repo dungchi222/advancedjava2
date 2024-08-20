@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link th:href="page.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Let Login!</h1>
+    <form th:action="@{/login}" method="post">
+        <div class="form-row">
+            <div class="label">Username</div>
+            <div class="field">
+                <input type="text" name="username" placeholder="Enter Username">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="label">Password</div>
+            <div class="field">
+                <input type="password" name="password" placeholder="Enter your password">
+            </div>
+        </div>
+        <div class="form-row btn-box">
+            <button type="submit">Log in</button>
+        </div>
+    </form>
+    <div>If you don't have account. Click <a href="/register">here</a> to create</div>
+</div>
+</body>
+</html>

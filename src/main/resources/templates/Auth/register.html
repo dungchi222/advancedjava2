@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link th:href="page.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Let Register!</h1>
+    <form th:action="@{/register}" method="post" th:object="${newuser}">
+        <div class="form-row">
+            <div class="label">Username</div>
+            <div class="field">
+                <input type="text" th:field="*{username}" placeholder="Enter Username" required>
+            </div>
+            <div class="error" th:if="${error == 'username_is_in_used'}">* User is in used. Please chose another name</div>
+        </div>
+        <div class="form-row">
+            <div class="label">Password</div>
+            <div class="field">
+                <input type="password" th:field="*{password}" placeholder="Enter your password" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="label">Confirm Password</div>
+            <div class="field">
+                <input type="password" th:field="*{confirmpassword}" placeholder="Enter your password" required>
+            </div>
+            <div class="error" th:if="${error == 'confirm_password_not_matched'}">* Confirm password is not matched.</div>
+        </div>
+        <div class="form-row">
+            <div class="label">FullName</div>
+            <div class="field">
+                <input type="text" th:field="*{fullname}" placeholder="Fullname">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="label">Email</div>
+            <div class="field">
+                <input type="email" th:field="*{email}" placeholder="E-mail">
+            </div>
+        </div>
+        <div class="form-row btn-box">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+    <div>If you have an account. Click <a href="/login">here</a> to login</div>
+
+    <div>Session: <span th:text="${msg}"></span></div>
+</div>
+</body>
+</html>

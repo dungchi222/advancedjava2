@@ -1,0 +1,44 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Shopping Cart</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Shopping Cart</h1>-->
+<!--    <div class="product-list">-->
+<!--        <div class="product" th:each="item: ${cart.items}" th:object="${item.product}">-->
+<!--            <div class="product-img"><img th:src="*{picture}"/> </div>-->
+<!--            <div class="product-name"><b><span th:text="*{name}"></span></b></div>-->
+<!--            <div class="product-price"><b><span th:text="*{price}"></span></b></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+<h1>Your Shopping Cart</h1>
+<div th:if="${error}">
+    <p th:text="${error}"></p>
+</div>
+<div th:if="${cart}">
+    <ul>
+        <li th:each="item : ${cart.items}">
+            <span th:text="${item.product.name}"></span> -
+            <span th:text="${item.qty}"></span> x
+            <span th:text="${item.product.price}"></span>
+        </li>
+    </ul>
+<!--    <p>Total Quantity: <span th:text="${cart.totalQty}"></span></p>-->
+<!--    <p>Total Amount: <span th:text="${cart.totalAmount}"></span></p>-->
+</div>
+<div th:if="${cart == null || cart.items.isEmpty()}">
+    <p>Your cart is empty.</p>
+</div>
+</body>
+</html>

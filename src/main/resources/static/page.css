@@ -1,0 +1,54 @@
+body{
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,Helvetica Neue,sans-serif;
+    font-size: 14px;
+}
+
+.container
+{
+    width: 300px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.form-row
+{
+    padding: 10px;
+}
+
+.form-row .label
+{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.field input
+{
+    width: 100%;
+    padding: 5px;
+}
+
+.btn-box
+{
+    text-align: center;
+}
+
+.btn-box button
+{
+    width: 70%;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: #2e2e2e;
+    color: #FFF;
+}
+
+.error
+{
+    color: red;
+    font-size: 90%;
+    margin-top: 3px;
+}
+
+.product-img {
+    width: 20px;
+    height: 20px;
+}
