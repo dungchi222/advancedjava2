@@ -27,4 +27,14 @@ public class CatalogService {
     public List<Catalog> getAllCatalogs() {
         return catalogRepository.findAll();
     }
+
+    @Autowired
+    private ProductRepository productRepository2;
+
+    public List<Product> searchProductsByName(String name) {
+        return productRepository2.findByNameContainingIgnoreCase(name);
+    }
+
+
+
 }

@@ -33,4 +33,23 @@ public class HtmlMenuBuilder implements MenuBuilder {
         menu.append("</ul>");
         return menu.toString();
     }
+
+    public String buildSearchResults(List<Product> products) {
+        StringBuilder results = new StringBuilder();
+        results.append("<ul>");
+        if (products == null || products.isEmpty()) {
+            results.append("<li>No products found</li>");
+        } else {
+            for (Product product : products) {
+                results.append("<li>")
+                        .append(product.getName())
+                        .append(" - ")
+                        .append(product.getPrice())
+                        .append("</li>");
+            }
+        }
+        results.append("</ul>");
+        return results.toString();
+    }
+
 }

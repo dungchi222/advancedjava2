@@ -13,4 +13,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query("SELECT p FROM Product p") // Dummy implementation, replace with actual query
     List<Product> getDummyProducts();
+
+    List<Product> findByNameContainingIgnoreCase(String name);
 }
